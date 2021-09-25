@@ -24,4 +24,6 @@ app.use((req, res, next) => {
   res.status(404).render('404', {docTitle: 'Page Not Found', path: ''});
 });
 
-app.listen(3000);
+let port = process.env.PORT || 3000;
+
+app.listen(port);
