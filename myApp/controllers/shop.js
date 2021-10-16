@@ -45,13 +45,13 @@ exports.getIndex = (req, res, next) => {
 exports.getCart = (req, res, next) => {
   req.user
     .populate('cart.items.productId')
-    // .execPopulate() Max uses this function, but it breaks the code.
+    //.execPopulate() //Max uses this function, but it breaks the code.
     .then(user => {
       const products = user.cart.items;  
       res.render('shop/cart', {
         path: '/cart',
         pageTitle: 'Your Cart',
-        products: products
+        products: products,
       });
     })
     .catch(err => console.log(err));
@@ -88,7 +88,7 @@ exports.postOrder = (req, res, next) => {
       });  
       const order = new Order({
         user: {
-          name: req.user.name,
+          email: req.user.email,
           userId: req.user
         },
         products: products
