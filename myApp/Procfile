@@ -1,1 +1,2 @@
 web:node app.js
+export SENDGRID_API_KEY="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"
