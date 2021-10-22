@@ -205,9 +205,14 @@ exports.postReset = (req, res, next) => {
           to: req.body.email,
           from: 'pol18004@byui.edu',
           subject: 'Password Request',
+          // html: `
+          //   <p>You requested a password reset.</p>
+          //   <p><a href="http://localhost:3000/reset/${token}">Click here</a> to set a new password.</p>
+          // `
           html: `
             <p>You requested a password reset.</p>
             <p><a href="http://localhost:3000/reset/${token}">Click here</a> to set a new password.</p>
+            <p><a href="https://cse341f2021.herokuapp.com/reset/${token}">Click here</a> to set a new password.</p>
           `
         });
       })
