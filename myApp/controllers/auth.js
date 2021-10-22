@@ -213,6 +213,8 @@ exports.postReset = (req, res, next) => {
           //   <p>You requested a password reset.</p>
           //   <p><a href="https://cse341f2021.herokuapp.com/reset/${token}">Click here</a> to set a new password.</p>
           // `
+        }).then(result => {
+          console.log('password reset request sent to', email);
         });
       })
       .catch(err => {
