@@ -211,7 +211,6 @@ exports.postReset = (req, res, next) => {
           // `
           html: `
             <p>You requested a password reset.</p>
-            <p><a href="http://localhost:3000/reset/${token}">Click here</a> to set a new password.</p>
             <p><a href="https://cse341f2021.herokuapp.com/reset/${token}">Click here</a> to set a new password.</p>
           `
         });
